@@ -1,14 +1,49 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Node Client</title>
+  <title>NodeCamp</title>
+  <meta name="google-signin-client_id" content="342876179484-j1svlvjorpa0bptu960gj208psn9r71t.apps.googleusercontent.com">
   <link href="https://rawgit.com/JamesWClark/RadCSS/master/rad.css" rel="stylesheet"/>
   <link href="client.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <h1>Client Hello</h1>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+  <div id="signin" class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div id="activate">
+    
+    <div class="flex" id="usernav">
+      <div class="x1 flex">
+        <div class="x1" id="userimage">userimage</div>
+        <div class="x1">
+          <div class="block" id="username">username</div>
+          <div class="block" id="useremail">useremail</div>
+          <div class="block" id="userid">userid</div>
+        </div>
+      </div>
+      <div class="x1"></div>
+      <div class="x1 right">
+        <button onclick="signOut(); return false;">Sign out</button>
+      </div>
+    </div>
+    
+    <div id="usersonline" class="flex wrap"></div>
+    
+    <div id="chat-container">
+      <div id="chat-log"></div>
+      <div id="chat-input-container">
+        <input id="chat-input" />
+      </div>
+      <div>
+        <button id="btnSendMessage">Send Message</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
   <script src="client.js"></script>
